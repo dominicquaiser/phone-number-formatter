@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "phone-number-formatter",
+  "title": "Phone Number Formatter",
+  "description": "Bulk parse and format phone numbers across regions and formats.",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "meta": { "templateId": "python-empty" },
+  "dockerfile": "./Dockerfile"
+}
