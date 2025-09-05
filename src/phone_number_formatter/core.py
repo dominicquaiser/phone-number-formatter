@@ -292,11 +292,13 @@ class PhoneNumberFormatter:
             # Standard parsing
             num = phonenumbers.parse(raw, default_region)
             if not phonenumbers.is_possible_number(num):
+                logger.warning(f"Impossible number detected: {raw}")
                 return False, raw, f"Impossible number: {raw}"
             formatted = phonenumbers.format_number(num, fmt_const)
             return True, formatted, None
 
         except phonenumbers.NumberParseException as e:
+            logger.warning(f"Parse exception for '{raw}': {e}")
             return False, raw, f"Parse error for {raw}: {e}"
 
 
