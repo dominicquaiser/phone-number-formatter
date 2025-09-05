@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.0] — 2025-09-05
+
+### Added
+- Dual Distribution Model: Now available as both an Apify actor and a standalone Python package
+- Python Package Support: Full pip-installable package with proper setup.py and pyproject.toml
+- CLI Tool: New console script phone-formatter for command-line usage
+- Package Structure: Reorganized code into proper Python package structure under src/phone_number_formatter/
+- Enhanced Documentation: Comprehensive README with installation and usage examples for all distribution methods
+- Example Files: Added usage examples for basic operations and CSV processing
+
+### Changed
+- BREAKING: Restructured project layout - moved core logic to src/phone_number_formatter/core.py
+- Enhanced: Updated README with comprehensive usage examples for all distribution methods
+- Improved: Better separation between Apify actor functionality and standalone package code
+- Updated: Documentation now covers installation via pip, usage as library, CLI tool, and Apify actor
+
 ## [1.1.0] – 2025-05-16
 
 ### Fixed

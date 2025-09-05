@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phone-number-formatter"
+version = "1.2.0"
+description = "Bulk parse and format phone numbers across regions and formats"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Dominic M. Quaiser", email = "mail@quaiser.dev"},
+]
+keywords = ["phone", "number", "format", "validation", "apify", "telecommunications", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9", 
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Telephony",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "phonenumbers",
+]
+
+[project.optional-dependencies]
+apify = ["apify>=2.0,<3.0"]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.10", 
+    "pytest-asyncio>=0.18",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.950",
+    "build>=0.8",
+    "twine>=4.0",
+]
+
+[project.scripts]
+phone-formatter = "phone_number_formatter.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-username/phone-number-formatter"
+Documentation = "https://github.com/your-username/phone-number-formatter#readme"
+Repository = "https://github.com/your-username/phone-number-formatter"
+"Bug Tracker" = "https://github.com/your-username/phone-number-formatter/issues"
+Changelog = "https://github.com/your-username/phone-number-formatter/blob/main/CHANGELOG.md"
+"Apify Actor" = "https://apify.com/azquaier/phone-number-formatter"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+phone_number_formatter = ["*.json", "*.yaml", "*.yml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"

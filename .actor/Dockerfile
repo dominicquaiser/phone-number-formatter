@@ -20,3 +20,7 @@ RUN useradd --create-home apify && \
 USER apify
 
 CMD ["python3", "-m", "src"]
+
+LABEL maintainer="Dominic M. Quaiser"
+LABEL version="1.2.0"
+LABEL description="Bulk parse and format phone numbers across regions and formats."

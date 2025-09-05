@@ -2,9 +2,11 @@
   "actorSpecification": 1,
   "name": "phone-number-formatter",
   "title": "Phone Number Formatter",
-  "description": "Bulk parse and format phone numbers across regions and formats.",
-  "version": "1.0.0",
+  "description": "Bulk parse and format phone numbers across regions and formats. Also available as a standalone Python package.",
+  "version": "1.2.0",
   "buildTag": "latest",
-  "meta": { "templateId": "python-empty" },
+  "meta": { 
+    "packageUrl": "https://github.com/your-username/phone-number-formatter"
+  },
   "dockerfile": "./Dockerfile"
 }
