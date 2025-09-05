@@ -1,5 +1,5 @@
 """
-Phone number formatting utility for Apify actors.
+Phone number formatting utility.
 
 Provides tools for parsing, validating, and formatting phone numbers across different regions 
 and formats using the phonenumbers library. This utility handles bulk processing with 
@@ -262,12 +262,12 @@ class PhoneNumberFormatter:
 
     def _attempt_phone_number_parse(self, raw: str, default_region: str, fmt_const: int) -> Tuple[bool, str, Optional[str]]:
         """Attempt to parse and format a phone number.
-        
+
         Args:
             raw: Raw phone number string
             default_region: ISO 3166-1 alpha-2 country code for parsing
             fmt_const: Output format constant from phonenumbers library
-            
+
         Returns:
             Tuple containing:
                 - Success flag (True if parsing succeeded)
@@ -275,14 +275,28 @@ class PhoneNumberFormatter:
                 - Error message (None if parsing succeeded)
         """
         try:
+            # Special handling: if number starts with country code digits but no region is specified,
+            # or if region is specified but number looks like international format, 
+            # try to detect this and handle appropriately
+            if default_region and not raw.startswith('+'):
+                cc = self.get_country_code(default_region)
+                if cc and raw.startswith(str(cc)):
+                    # This looks like an international number without +, try parsing with + and no region
+                    international_attempt = f"+{raw}"
+                    num = phonenumbers.parse(international_attempt, None)
+                    if not phonenumbers.is_possible_number(num):
+                        return False, raw, f"Impossible number: {international_attempt}"
+                    formatted = phonenumbers.format_number(num, fmt_const)
+                    return True, formatted, None
+
+            # Standard parsing
             num = phonenumbers.parse(raw, default_region)
             if not phonenumbers.is_possible_number(num):
-                logger.warning(f"Impossible number detected: {raw}")
                 return False, raw, f"Impossible number: {raw}"
             formatted = phonenumbers.format_number(num, fmt_const)
             return True, formatted, None
+
         except phonenumbers.NumberParseException as e:
-            logger.warning(f"Parse exception for '{raw}': {e}")
             return False, raw, f"Parse error for {raw}: {e}"
 
 
