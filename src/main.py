@@ -3,7 +3,7 @@ from __future__ import annotations
 import asyncio
 from apify import Actor
 
-from phone_number_formatter.core import PhoneFormatter, PhoneFormatterConfig
+from .phone_number_formatter.core import PhoneFormatter, PhoneFormatterConfig
 
 
 async def main() -> None:
