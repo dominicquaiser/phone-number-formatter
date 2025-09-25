@@ -68,16 +68,6 @@ The actor accepts the following input fields. You can provide these as a JSON ob
 }
 ```
 
-### 🤖 Other Actors
-
-🔗 Combine with Other Actors for Powerful Workflows.
-
-You can enhance your data processing pipelines by combining this Phone Number Formatter with other Apify actors.
-
-For example, you might also check out the Gelbe Seiten **[German Yellow Pages Scraper](https://apify.com/dominic-quaiser/gelbe-seiten-german-yellow-pages-scraper)** Scraper:
-
-This actor is designed to extract business listings from gelbeseiten.de, which often include phone numbers. After using the Gelbe Seiten Scraper to gather business contact details, you can then use this Phone Number Formatter to automatically clean, validate, and standardize those extracted phone numbers into your desired format (e.g., E.164 for CRMs or international format for outreach lists). This creates a powerful workflow for lead generation and data enrichment where raw contact data is collected and then uniformly formatted for consistent use.
-
 ### 💲 Pricing
 
 **1000 results = $0.08**
