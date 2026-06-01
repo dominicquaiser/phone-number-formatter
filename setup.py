@@ -4,11 +4,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+    requirements = [
+        line.strip() for line in fh if line.strip() and not line.startswith("#")
+    ]
 
 setup(
     name="phone-number-formatter",
-    version="1.2.0",
+    version="1.2.1",
     author="Dominic M. Quaiser",
     author_email="mail@quaiser.dev",
     description="Bulk parse and format phone numbers across regions and formats",

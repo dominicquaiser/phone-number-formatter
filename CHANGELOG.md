@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Removed
+- Removed Apify dataset cap enforcement so the actor pushes every processed result.
+
 ## [1.2.0] — 2025-09-05
 
 ### Added
@@ -19,7 +24,7 @@
 ## [1.1.0] – 2025-05-16
 
 ### Fixed
-- Billing Limits: Fixed misconfigured `ACTOR_MAX_PAID_DATASET_ITEMS` handling by switching from manual environment variable parsing to Apify SDK's Actor.config.`max_paid_dataset_items` property for proper pay-per-result billing enforcement.
+- Dataset Limits: Replaced manual environment parsing with Apify SDK config access for dataset item limits.
 
 ## [1.0.0] – 2025-05-16
 

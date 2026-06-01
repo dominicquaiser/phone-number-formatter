@@ -68,10 +68,6 @@ The actor accepts the following input fields. You can provide these as a JSON ob
 }
 ```
 
-### 💲 Pricing
-
-**1000 results = $0.08**
-
 ## Using the Code from GitHub (Local or Package)
 
 The core logic of this phone number formatter can be used directly in your Python projects or run locally via the provided CLI script.
@@ -156,3 +152,11 @@ MIT License - see [LICENSE](https://github.com/dominicquaiser/Phone-Number-Forma
 - **Author**: Dominic M. Quaiser
 - **Contact**: [mail@dominic-quaiser.io](mailto:mail@dominic-quaiser.io)
 - **Website**: [dominic-quaiser.io](https://dominic-quaiser.io/)
+
+## ☕ Support the Project
+
+If this tool saved you time or effort, consider buying me a coffee ☕  
+Your support helps cover hosting costs and keeps development going.
+
+👉 [ko-fi.com/dominicquaiser](https://ko-fi.com/dominicquaiser)  
+_No account required._
